@@ -11,9 +11,7 @@ class Transaction extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = [
-        'rice_id', 'user_id', 'quantiity', 'total', 'status', 'payment_url'
-    ];
+    protected $guarded = ['id'];
 
     public function rice()
     {

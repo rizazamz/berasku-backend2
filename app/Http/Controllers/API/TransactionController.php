@@ -68,17 +68,19 @@ class TransactionController extends Controller
     public function checkout(Request $request)
     {
         $request->validate([
-            'rice_id' => 'required|exists:rice_id',
-            'user_id' => 'required|exists:user_id',
+            'rice_id' => 'required',
+            'user_id' => 'required',
             'quantity' => 'required',
             'total' => 'required',
             'status' => 'required',
         ]);
+
         $transaction = Transaction::create([
             'rice_id' => $request->rice_id,
             'user_id' => $request->user_id,
             'quantity' => $request->quantity,
             'status' => $request->status,
+            'total' => $request->total,
             'payment_url' => '',
         ]);
 
