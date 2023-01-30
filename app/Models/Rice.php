@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Rice extends Model
 {
     use HasFactory,SoftDeletes;
+    public $table = "rice";
     protected $fillable = [
         'name', 'description', 'ingredients', 'price', 'rate', 'types', 'picturePath'
     ];
