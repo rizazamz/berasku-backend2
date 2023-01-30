@@ -17,7 +17,7 @@ class Transaction extends Model
 
     public function rice()
     {
-        return $this->hasOne(Rice::class, 'id', 'rice_id');
+        return $this->hasOne(Rice::class, 'rice_id', 'id');
     }
 
     public function user()
